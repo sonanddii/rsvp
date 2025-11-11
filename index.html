@@ -8,13 +8,13 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #f5efe2; /* beige background */
-      color: #4a2c2a; /* dark brown text */
+      background-color: #f5efe2;
+      color: #4a2c2a;
       text-align: center;
     }
 
     .band {
-      background-color: #4a2c2a; /* dark brown */
+      background-color: #4a2c2a;
       height: 40px;
       width: 100%;
     }
@@ -24,7 +24,7 @@
     }
 
     .gold {
-      color: #c9a23f; /* gold color */
+      color: #c9a23f;
     }
 
     .names {
@@ -120,6 +120,54 @@
       display: block;
     }
 
+    /* New Sections */
+    .reminders h2 {
+      font-size: 36px;
+      color: #4a2c2a;
+      margin-bottom: 20px;
+    }
+
+    .reminders h3 {
+      color: #c9a23f;
+      font-family: 'Great Vibes', cursive;
+      font-size: 28px;
+      margin-top: 20px;
+    }
+
+    .reminders p {
+      font-size: 18px;
+      margin: 10px auto;
+      max-width: 600px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    input, select, textarea, button {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      padding: 10px;
+      border: 1px solid #c9a23f;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4a2c2a;
+      color: #f5efe2;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #c9a23f;
+      color: #4a2c2a;
+    }
+
     @media (max-width: 600px) {
       .column.right, .column.left {
         text-align: center;
@@ -143,7 +191,6 @@
     <div class="medium">L. Dangue</div>
   </div>
 
-  <!-- Main Wedding Photo -->
   <img src="your-photo-here.jpg" alt="Jason and Diana Mei" class="main-photo">
 
   <div class="quote">
@@ -155,13 +202,10 @@
 
   <div class="section details">
     <h2>DETAILS</h2>
-
     <p><strong>Date & Time:</strong><br>FRIDAY || NOV 21 || 2PM</p>
-
     <p><strong>Venue:</strong></p>
     <p><em>Ceremony:</em><br>Parish of Divine Mercy<br>Brgy. Sicsican, Puerto Princesa City</p>
     <p><em>Reception:</em><br>Southwind Resort Palawan<br>Brgy. Tiniguiban, Puerto Princesa City</p>
-
     <p><strong>Attire:</strong></p>
     <p>Guests: Casual or Semi-Formal attire in shades of beige.<br>
     Godfathers: Barong Tagalog</p>
@@ -169,7 +213,6 @@
 
   <div class="band"></div>
 
-  <!-- More Pictures -->
   <img src="more-pictures-here.jpg" alt="More wedding photos" class="more-photo">
 
   <div class="band"></div>
@@ -294,6 +337,53 @@
         <p>Esperanza M. Remo</p>
       </div>
     </div>
+  </div>
+
+  <div class="band"></div>
+<img src="another-photo-here.jpg" alt="Wedding photos" class="more-photo">
+
+  <div class="band"></div>
+
+  <!-- Reminders -->
+  <div class="section reminders">
+    <h2>REMINDERS</h2>
+
+    <h3>GIFT GIVING</h3>
+    <p>With all that we have, we’ve been truly blessed.<br>
+    Your presence and prayers are all that we request.<br>
+    But if you desire to give nonetheless,<br>
+    monetary gift is one we humbly suggest.</p>
+
+    <h3>INVITEES</h3>
+    <p>We kindly request that only the guests listed on your invitation attend,<br>
+    as we have reserved seating.</p>
+  </div>
+
+  <div class="band"></div>
+
+  <!-- RSVP Form -->
+  <div class="section rsvp">
+    <h2>RSVP</h2>
+    <form name="rsvp" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="rsvp">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="attendance">Will you attend?</label>
+      <select name="attendance" id="attendance" required>
+        <option value="">Select an option</option>
+        <option value="Yes, I’ll be there">Yes, I’ll be there!</option>
+        <option value="No, I can’t attend">No, I can’t attend</option>
+      </select>
+
+      <label for="guests">Number of guests (including you)</label>
+      <input type="number" name="guests" id="guests" min="1" max="10">
+
+      <label for="message">Message (optional)</label>
+      <textarea name="message" id="message" rows="3"></textarea>
+
+      <button type="submit">Send RSVP</button>
+    </form>
   </div>
 
   <div class="band"></div>
