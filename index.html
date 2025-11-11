@@ -1,26 +1,302 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Son & Dii's Wedding</title>
+  <title>Jason & Diana Mei's Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Georgia, serif; background-color: #fff9e4; text-align: center; padding: 50px; }
-    form { margin-top: 30px; }
-    input, select, button { font-size: 18px; padding: 8px; margin: 10px; }
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #f5efe2; /* beige background */
+      color: #4a2c2a; /* dark brown text */
+      text-align: center;
+    }
+
+    .band {
+      background-color: #4a2c2a; /* dark brown */
+      height: 40px;
+      width: 100%;
+    }
+
+    h1, h2, h3 {
+      margin: 10px 0;
+    }
+
+    .gold {
+      color: #c9a23f; /* gold color */
+    }
+
+    .names {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      line-height: 1.3;
+    }
+
+    .names .medium {
+      font-size: 24px;
+      color: #4a2c2a;
+    }
+
+    .names .big {
+      font-family: 'Great Vibes', cursive;
+      font-size: 60px;
+      color: #c9a23f;
+    }
+
+    .ampersand {
+      font-size: 40px;
+      color: #c9a23f;
+      margin: 20px 0;
+    }
+
+    .quote {
+      font-style: italic;
+      margin: 40px auto;
+      max-width: 600px;
+      font-size: 18px;
+    }
+
+    .section {
+      padding: 40px 20px;
+    }
+
+    .details h2 {
+      font-size: 40px;
+      color: #4a2c2a;
+      margin-bottom: 20px;
+    }
+
+    .details p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .two-columns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .column {
+      flex: 1 1 300px;
+      padding: 10px 30px;
+    }
+
+    .column.right {
+      text-align: right;
+    }
+
+    .column.left {
+      text-align: left;
+    }
+
+    .entourage h2 {
+      font-size: 36px;
+      color: #4a2c2a;
+      margin-bottom: 30px;
+    }
+
+    .entourage h3 {
+      font-size: 22px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #c9a23f;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .entourage p {
+      margin: 4px 0;
+      font-size: 18px;
+    }
+
+    img.main-photo, img.more-photo {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 10px;
+      margin: 30px auto;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .column.right, .column.left {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>You're Invited to Our Wedding!</h1>
-  <p>Please let us know if you’ll be joining us on our special day 💕</p>
 
-  <form name="rsvp" method="POST" data-netlify="true">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <select name="attendance" required>
-      <option value="">-- Are you attending? --</option>
-      <option value="Yes">Yes, I’ll be there!</option>
-      <option value="No">Sorry, I can’t make it</option>
-    </select>
-    <button type="submit">Send RSVP</button>
-  </form>
+  <div class="band"></div>
+
+  <div class="names">
+    <div class="medium">Jason</div>
+    <div class="big">SON</div>
+    <div class="medium">B. Abrea</div>
+
+    <div class="ampersand">&</div>
+
+    <div class="medium">Diana Mei</div>
+    <div class="big">DII</div>
+    <div class="medium">L. Dangue</div>
+  </div>
+
+  <!-- Main Wedding Photo -->
+  <img src="your-photo-here.jpg" alt="Jason and Diana Mei" class="main-photo">
+
+  <div class="quote">
+    “So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.”<br>
+    <strong>Matthew 19:6 (NKJV)</strong>
+  </div>
+
+  <div class="band"></div>
+
+  <div class="section details">
+    <h2>DETAILS</h2>
+
+    <p><strong>Date & Time:</strong><br>FRIDAY || NOV 21 || 2PM</p>
+
+    <p><strong>Venue:</strong></p>
+    <p><em>Ceremony:</em><br>Parish of Divine Mercy<br>Brgy. Sicsican, Puerto Princesa City</p>
+    <p><em>Reception:</em><br>Southwind Resort Palawan<br>Brgy. Tiniguiban, Puerto Princesa City</p>
+
+    <p><strong>Attire:</strong></p>
+    <p>Guests: Casual or Semi-Formal attire in shades of beige.<br>
+    Godfathers: Barong Tagalog</p>
+  </div>
+
+  <div class="band"></div>
+
+  <!-- More Pictures -->
+  <img src="more-pictures-here.jpg" alt="More wedding photos" class="more-photo">
+
+  <div class="band"></div>
+
+  <div class="section entourage">
+    <h2>ENTOURAGE</h2>
+
+    <div class="two-columns">
+      <div class="column right">
+        <h3>Parents of the Bride</h3>
+        <p>Mardie A. Dangue</p>
+        <p>Nila L. Dangue</p>
+
+        <h3>“To assist us in our needs”</h3>
+        <h3>Maid of Honor</h3>
+        <p>Quennie Joy R. Panisales</p>
+
+        <h3>Bridesmaids</h3>
+        <p>Aljie Fe Laad</p>
+        <p>Kayla Mariel B. Abrea</p>
+
+        <h3>“To light our path”</h3>
+        <h3>Candle</h3>
+        <p>Earl T. Parcia</p>
+        <p>Princess Danica L. Badenas</p>
+
+        <h3>“To bind us together”</h3>
+        <h3>Cord</h3>
+        <p>Matt Alfred L. Magura</p>
+        <p>Althea D. Benitez</p>
+
+        <h3>“To cloth us together”</h3>
+        <h3>Veil</h3>
+        <p>Karlos Francisco Buñi</p>
+        <p>Armie B. Gonzales</p>
+
+        <h3>Ring Bearer</h3>
+        <p>Jethro Cacal</p>
+        <p>Mark Alfred B. Badenas</p>
+      </div>
+
+      <div class="column left">
+        <h3>Parents of the Groom</h3>
+        <p>Elegio P. Abrea</p>
+        <p>Marilyn B. Abrea</p>
+
+        <h3>Best Man</h3>
+        <p>Jerome B. Abrea</p>
+
+        <h3>Groomsmen</h3>
+        <p>Mark Laad</p>
+        <p>Devin Jude N. Cabanag</p>
+
+        <h3>Coin Bearer</h3>
+        <p>John Kearl II B. Neri</p>
+        <p>John Wakeel B. Neri</p>
+
+        <h3>Bible Bearer</h3>
+        <p>John Alfred L. Magura</p>
+
+        <h3>Flower Girls</h3>
+        <p>Acel Gabriella L. Vasquez</p>
+        <p>Acel Jaliyah L. Vasquez</p>
+        <p>Kelsy Jayne G. Dela Torre</p>
+        <p>Blessed Angel L. Gonzales</p>
+      </div>
+    </div>
+
+    <h3>Principal Sponsors</h3>
+    <p>“to stand as principal witness in our exchange of vows”</p>
+
+    <div class="two-columns">
+      <div class="column right">
+        <h3>Godfathers</h3>
+        <p>Rev. Roderick Y. Caabay</p>
+        <p>Bro. Gerald Caballero</p>
+        <p>Bro. Luke L. Camacho</p>
+        <p>Dr. Romeo M. Cabungcal</p>
+        <p>Gil M. Saavedra</p>
+        <p>Eduardo T. Vallejo</p>
+        <p>Hon. Bernie Valdez</p>
+        <p>Atty. Richalex G. Jagmis</p>
+        <p>Orphy C. Ordinario</p>
+        <p>Walfredo E. Aban</p>
+        <p>Noel B. Barra</p>
+        <p>Pedro B. Barra</p>
+        <p>Edwin B. Barra</p>
+        <p>Rodel Muñoz</p>
+        <p>Espinili V. Magura</p>
+        <p>Cecile G. Vasquez</p>
+        <p>Romeo A. Herrera</p>
+        <p>Archie Loresto</p>
+        <p>Edmundo Mahusay</p>
+        <p>Ernie Cacal</p>
+        <p>Sonny Namia</p>
+        <p>Andres L. Remo</p>
+      </div>
+
+      <div class="column left">
+        <h3>Godmothers</h3>
+        <p>Augustina S. Abian</p>
+        <p>Sis. Lerma Caballero</p>
+        <p>Dr. Madeliene Camacho</p>
+        <p>Felina Cabungcal</p>
+        <p>Hon. Helen L. Saavedra</p>
+        <p>Erlinda B. Vallejo</p>
+        <p>Emma Zabala</p>
+        <p>Sharon O. Jagmis</p>
+        <p>Shereen A. Ustares</p>
+        <p>Catherine Peilago</p>
+        <p>Meriam A. Barra</p>
+        <p>Jasmin J. Barra</p>
+        <p>Chona S. Barra</p>
+        <p>Dina Muñoz</p>
+        <p>Merla C. Ladica</p>
+        <p>Adelfa L. Vasquez</p>
+        <p>Marivie L. Herrera</p>
+        <p>Analiza L. Loresto</p>
+        <p>Carmencita L. Mahusay</p>
+        <p>Janet J. Nieves</p>
+        <p>Alma A. Chua</p>
+        <p>Esperanza M. Remo</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band"></div>
+
 </body>
 </html>
