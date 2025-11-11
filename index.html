@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Our Wedding RSVP</title>
+  <style>
+    body { font-family: Georgia, serif; background-color: #fff8f2; text-align: center; padding: 50px; }
+    form { margin-top: 30px; }
+    input, select, button { font-size: 18px; padding: 8px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <h1>You're Invited to Our Wedding!</h1>
+  <p>Please let us know if you’ll be joining us on our special day 💕</p>
+
+  <form name="rsvp" method="POST" data-netlify="true">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <select name="attendance" required>
+      <option value="">-- Are you attending? --</option>
+      <option value="Yes">Yes, I’ll be there!</option>
+      <option value="No">Sorry, I can’t make it</option>
+    </select>
+    <button type="submit">Send RSVP</button>
+  </form>
+</body>
+</html>
