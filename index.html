@@ -16,18 +16,39 @@
   color: #4a2c2a;
   text-align: center;
 }
-    .heading-container {
+   .heading-container {
   position: relative;
-  z-index: 0; /* ensures heading is above background */
   text-align: center;
-  margin-top: 0; /* no extra spacing added */
-  padding: 60px 0; /* optional vertical padding for spacing */
-  background-image: 
-    url('flower.png'),  /* left corner */
-    url('flower.png');  /* right corner */
-  background-position: top left, top right;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 450px auto, 450px auto; /* adjust size as needed */
+  padding: 60px 0;
+  z-index: 0;
+}
+
+.heading-container::before,
+.heading-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 375px;   /* adjust size */
+  height: 375px;  /* adjust size */
+  background-image: url('flower.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.heading-container::before {
+  left: 0;
+  transform: scaleX(-1); /* mirror the left flower */
+}
+
+.heading-container::after {
+  right: 0;
+  /* normal orientation for right flower */
+}
+
+.names {
+  position: relative;
+  z-index: 1; /* ensures heading is above the flowers */
 }
     .band {
       background-color: #4a2c2a;
