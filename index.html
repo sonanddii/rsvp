@@ -50,11 +50,28 @@
   position: relative;
   z-index: 1; /* ensures heading is above the flowers */
 }
-    .band {
-      background-color: #4a2c2a;
-      height: 25px;
-      width: 100%;
-    }
+   .band {
+  width: 100%;
+  height: 40px; /* solid dark brown band */
+  background-color: #4a2c2a; /* dark brown */
+  position: relative;
+}
+
+/* Add gradient below the band */
+.band::after {
+  content: "";
+  position: absolute;
+  top: 100%;  /* immediately below the band */
+  left: 0;
+  width: 100%;
+  height: 450px; /* length of gradient */
+  background: linear-gradient(
+    to bottom,
+    #5c3d37 0%,  /* lighter brown just below band */
+    #f5efe2 100% /* fade into beige page background */
+  );
+  z-index: -1; /* behind other content */
+}
 
     h1, h2, h3 {
       margin: 10px 0;
