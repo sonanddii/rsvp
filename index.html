@@ -261,10 +261,10 @@
     Kindly confirm your attendance through the RSVP form below.
   </p>
 
-  <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="rsvp-form">
+  <form name="rsvp" id="rsvp-form">
     <input type="hidden" name="form-name" value="rsvp">
 
-    <!-- Honeypot -->
+    <!-- Honeypot for bots -->
     <p style="display:none">
       <label>Don’t fill this out: <input name="bot-field"></label>
     </p>
@@ -276,11 +276,11 @@
       <p><strong>Will you attend?</strong></p>
       <label class="radio-option">
         <input type="radio" name="attendance" value="Yes, I’ll be there" required>
-        <span class="custom-radio"></span> Yes, I’ll be there!
+        <span class="custom-radio"></span> ✔ Yes, I’ll be there!
       </label>
       <label class="radio-option">
         <input type="radio" name="attendance" value="No, I’m sorry I can’t attend" required>
-        <span class="custom-radio"></span> I’m sorry, I won’t be able to attend
+        <span class="custom-radio"></span> ✖ I’m sorry, I won’t be able to attend
       </label>
     </div>
 
@@ -292,16 +292,25 @@
   </div>
 </div>
 
-<div class="band"></div>
-
 <script>
-  // Show thank-you message after Netlify form submission
+  // Netlify AJAX form submission
   const form = document.getElementById('rsvp-form');
+
   form.addEventListener('submit', function(e) {
-    setTimeout(() => {
-      form.style.display = 'none';
-      document.getElementById('thank-you').style.display = 'block';
-    }, 100);
+    e.preventDefault(); // prevent default page reload
+
+    const data = new FormData(form);
+
+    // Submit form via fetch to Netlify
+    fetch("/", {
+      method: "POST",
+      body: data
+    })
+    .then(() => {
+      form.style.display = "none"; // hide form
+      document.getElementById('thank-you').style.display = "block"; // show thank-you
+    })
+    .catch((error) => alert("Oops! There was an error: " + error));
   });
 </script>
 
