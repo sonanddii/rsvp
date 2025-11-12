@@ -57,22 +57,6 @@
   position: relative;
 }
 
-/* Add gradient below the band */
-.band::after {
-  content: "";
-  position: absolute;
-  top: 100%;  /* immediately below the band */
-  left: 0;
-  width: 100%;
-  height: 450px; /* length of gradient */
-  background: linear-gradient(
-    to bottom,
-    #5c3d37 0%,  /* lighter brown just below band */
-    #f5efe2 100% /* fade into beige page background */
-  );
-  z-index: -1; /* behind other content */
-}
-
     h1, h2, h3 {
       margin: 10px 0;
     }
@@ -288,7 +272,7 @@
 }
     .entourage h3.phrase {
   color: #000000;
-  font-size: 30px;
+  font-size: 24px;
   margin-top: 30px;
   margin-bottom: 10px;
   font-family: 'Great Vibes', cursive;
