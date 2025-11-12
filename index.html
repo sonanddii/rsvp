@@ -257,23 +257,22 @@
 <!-- RSVP Form -->
 <div class="section rsvp">
   <h2>RSVP</h2>
-  <p style="font-size: 18px; max-width: 500px; margin: 0 auto 20px;">
-    Kindly confirm your attendance through the RSVP form below.
-  </p>
-
-  <form name="rsvp" id="rsvp-form">
+  <form name="rsvp" id="rsvp-form" data-netlify="true" netlify-honeypot="bot-field">
+    <!-- Netlify hidden field -->
     <input type="hidden" name="form-name" value="rsvp">
 
-    <!-- Honeypot for bots -->
+    <!-- Honeypot -->
     <p style="display:none">
       <label>Don’t fill this out: <input name="bot-field"></label>
     </p>
 
+    <!-- Name -->
     <label for="name">Full Name</label>
     <input type="text" name="name" id="name" required>
 
+    <!-- Attendance -->
     <div class="attendance-options">
-      <p><strong>Will you attend?</strong></p>
+      <p><strong>Kindly confirm your attendance below. Thank you!</strong></p>
       <label class="radio-option">
         <input type="radio" name="attendance" value="Yes, I’ll be there" required>
         <span class="custom-radio"></span> Yes, I’ll be there!
@@ -293,24 +292,32 @@
 </div>
 
 <script>
-  // Netlify AJAX form submission
+  // Helper to encode form data for Netlify
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
   const form = document.getElementById('rsvp-form');
 
   form.addEventListener('submit', function(e) {
-    e.preventDefault(); // prevent default page reload
+    e.preventDefault();
 
-    const data = new FormData(form);
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => data[key] = value);
 
-    // Submit form via fetch to Netlify
     fetch("/", {
       method: "POST",
-      body: data
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode(data)
     })
     .then(() => {
-      form.style.display = "none"; // hide form
-      document.getElementById('thank-you').style.display = "block"; // show thank-you
+      form.style.display = "none";
+      document.getElementById('thank-you').style.display = "block";
     })
-    .catch((error) => alert("Oops! There was an error: " + error));
+    .catch(err => alert("Oops! There was an error: " + err));
   });
 </script>
 
