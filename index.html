@@ -211,6 +211,28 @@
   background-color: #c9a23f;
   box-shadow: 0 0 0 2px #f5efe2 inset;
 }
+    .photos h2 {
+  font-size: 40px;
+  color: #4a2c2a;
+  margin-bottom: 30px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.photo-grid img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
   </style>
 </head>
 <body>
@@ -251,12 +273,16 @@
 
   <div class="band"></div>
 
-  <img src="DSC_0555.jpg" alt="More wedding photos" class="more-photo">
-  <img src="DSC_0555.jpg" alt="More wedding photos" class="more-photo">
-  <br>
-  <img src="DSC_0797.jpg" alt="More wedding photos" class="more-photo">
-  <img src="DSC_0689.jpg" alt="More wedding photos" class="more-photo">
-
+  <div class="section photos">
+  <h2>MORE PHOTOS</h2>
+  <div class="photo-grid">
+    <img src="DSC_0555.jpg" alt="Wedding photo 1">
+    <img src="DSC_0360.jpg" alt="Wedding photo 2">
+    <img src="DSC_0797.jpg" alt="Wedding photo 3">
+    <img src="DSC_0689.jpg" alt="Wedding photo 4">
+  </div>
+</div>
+  
   <div class="band"></div>
 
   <div class="section entourage">
