@@ -7,494 +7,248 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-  margin: 0;
-  font-family: 'Playfair Display', serif;
-  background-color: #f5efe2;
-  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  background-repeat: repeat;
-  background-size: auto;
-  color: #4a2c2a;
-  text-align: center;
-}
-   .heading-container {
-  position: relative;
-  text-align: center;
-  padding: 60px 0;
-  z-index: 0;
-}
-
-.heading-container::before,
-.heading-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 450px;   /* adjust size */
-  height: 450px;  /* adjust size */
-  background-image: url('flower.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
-.heading-container::before {
-  left: 0;
-  transform: scaleX(-1); /* mirror the left flower */
-}
-
-.heading-container::after {
-  right: 0;
-  /* normal orientation for right flower */
-}
-
-.names {
-  position: relative;
-  z-index: 1; /* ensures heading is above the flowers */
-}
-   .band {
-  width: 100%;
-  height: 40px; /* solid dark brown band */
-  background-color: #4a2c2a; /* dark brown */
-  position: relative;
-}
-
-    h1, h2, h3 {
-      margin: 10px 0;
-    }
-    
-    .gold {
-      color: #c9a23f;
-    }
-
-    .names {
-      margin-top: 40px;
-      margin-bottom: 40px;
-      line-height: 1.3;
-    }
-
-    .names .medium {
-      font-size: 24px;
-      color: #4a2c2a;
-    }
-
-    .names .big {
-      font-family: 'Great Vibes', cursive;
-      font-size: 60px;
-      color: #c9a23f;
-    }
-
-    .ampersand {
-      font-size: 40px;
-      color: #c9a23f;
-      margin: 20px 0;
-    }
-
-    .quote {
-      font-style: italic;
-      margin: 40px auto;
-      max-width: 600px;
-      font-size: 18px;
-    }
-
-    .section {
-      padding: 40px 20px;
-    }
-
-    .details h2 {
-      font-size: 40px;
-      color: #4a2c2a;
-      margin-bottom: 20px;
-    }
-
-    .details p {
-      font-size: 20px;
-      margin: 10px 0;
-    }
-
-    .two-columns {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .column {
-      flex: 1 1 300px;
-      padding: 10px 30px;
-    }
-
-    .column.right {
-      text-align: right;
-    }
-
-    .column.left {
-      text-align: left;
-    }
-
-    .entourage h2 {
-      font-size: 36px;
-      color: #4a2c2a;
-      margin-bottom: 30px;
-    }
-
-    .entourage h3 {
-      font-size: 22px;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: #c9a23f;
-      font-family: 'Great Vibes', cursive;
-    }
-
-    .entourage p {
-      margin: 4px 0;
-      font-size: 18px;
-    }
-
-    img.main-photo, img.more-photo {
-      width: 80%;
-      max-width: 800px;
-      border-radius: 10px;
-      margin: 30px auto;
-      display: block;
-    }
-
-    /* New Sections */
-    .reminders h2 {
-      font-size: 36px;
-      color: #4a2c2a;
-      margin-bottom: 20px;
-    }
-
-    .reminders h3 {
-      color: #c9a23f;
-      font-family: 'Great Vibes', cursive;
-      font-size: 28px;
-      margin-top: 20px;
-    }
-
-    .reminders p {
-      font-size: 18px;
-      margin: 10px auto;
-      max-width: 600px;
-    }
-
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    input, select, textarea, button {
+      margin: 0;
       font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      padding: 10px;
-      border: 1px solid #c9a23f;
-      border-radius: 5px;
-    }
-
-    button {
-      background-color: #4a2c2a;
-      color: #f5efe2;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #c9a23f;
+      background-color: #f5efe2;
+      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-repeat: repeat;
+      background-size: auto;
       color: #4a2c2a;
+      text-align: center;
     }
-
-    @media (max-width: 600px) {
-      .column.right, .column.left {
-        text-align: center;
-      }
+    .heading-container {
+      position: relative;
+      text-align: center;
+      padding: 60px 0;
+      z-index: 0;
     }
-    .attendance-options {
-  margin: 10px 0 20px;
-}
-
-.radio-option {
-  display: block;
-  margin: 8px auto;
-  font-size: 18px;
-  color: #4a2c2a;
-  cursor: pointer;
-  position: relative;
-  padding-left: 30px;
-  text-align: left;
-  max-width: 250px;
-}
-
-.radio-option input[type="radio"] {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-}
-
-.custom-radio {
-  position: absolute;
-  left: 0;
-  top: 3px;
-  height: 18px;
-  width: 18px;
-  border: 2px solid #c9a23f;
-  border-radius: 50%;
-  transition: all 0.2s ease;
-}
-
-.radio-option input[type="radio"]:checked + .custom-radio {
-  background-color: #c9a23f;
-  box-shadow: 0 0 0 2px #f5efe2 inset;
-}
-    .photos h2 {
-  font-size: 40px;
-  color: #4a2c2a;
-  margin-bottom: 30px;
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  align-items: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.photo-grid img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-    .entourage h3.phrase {
-  color: #000000;
-  font-size: 24px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  font-family: 'Great Vibes', cursive;
-}
-
-/* Make "Principal Sponsors" heading larger but keep gold */
-.entourage h3.principal-title {
-  color: #c9a23f;
-  font-size: 30px;
-  font-family: 'Great Vibes', cursive;
-  margin-top: 40px;
-}
-    
-    .entourage h3.principal-phrase {
-  color: #000000;
-  font-size: 24px;
-  font-family: 'Great Vibes', cursive;
-}
+    .heading-container::before,
+    .heading-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 450px;
+      height: 450px;
+      background-image: url('flower.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+    .heading-container::before {
+      left: 0;
+      transform: scaleX(-1);
+    }
+    .heading-container::after {
+      right: 0;
+    }
+    .names { position: relative; z-index: 1; }
+    .band {
+      width: 100%;
+      height: 40px;
+      background-color: #4a2c2a;
+      position: relative;
+    }
+    h1, h2, h3 { margin: 10px 0; }
+    .gold { color: #c9a23f; }
+    .names { margin-top: 40px; margin-bottom: 40px; line-height: 1.3; }
+    .names .medium { font-size: 24px; color: #4a2c2a; }
+    .names .big { font-family: 'Great Vibes', cursive; font-size: 60px; color: #c9a23f; }
+    .ampersand { font-size: 40px; color: #c9a23f; margin: 20px 0; }
+    .quote { font-style: italic; margin: 40px auto; max-width: 600px; font-size: 18px; }
+    .section { padding: 40px 20px; }
+    .details h2 { font-size: 40px; color: #4a2c2a; margin-bottom: 20px; }
+    .details p { font-size: 20px; margin: 10px 0; }
+    .two-columns { display: flex; justify-content: center; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+    .column { flex: 1 1 300px; padding: 10px 30px; }
+    .column.right { text-align: right; }
+    .column.left { text-align: left; }
+    .entourage h2 { font-size: 36px; color: #4a2c2a; margin-bottom: 30px; }
+    .entourage h3 { font-size: 22px; margin-top: 30px; margin-bottom: 10px; color: #c9a23f; font-family: 'Great Vibes', cursive; }
+    .entourage p { margin: 4px 0; font-size: 18px; }
+    img.main-photo, img.more-photo { width: 80%; max-width: 800px; border-radius: 10px; margin: 30px auto; display: block; }
+    .reminders h2 { font-size: 36px; color: #4a2c2a; margin-bottom: 20px; }
+    .reminders h3 { color: #c9a23f; font-family: 'Great Vibes', cursive; font-size: 28px; margin-top: 20px; }
+    .reminders p { font-size: 18px; margin: 10px auto; max-width: 600px; }
+    form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    input, select, textarea, button { font-family: 'Playfair Display', serif; font-size: 16px; padding: 10px; border: 1px solid #c9a23f; border-radius: 5px; }
+    button { background-color: #4a2c2a; color: #f5efe2; cursor: pointer; transition: background-color 0.3s; }
+    button:hover { background-color: #c9a23f; color: #4a2c2a; }
+    @media (max-width: 600px) { .column.right, .column.left { text-align: center; } }
+    .attendance-options { margin: 10px 0 20px; }
+    .radio-option { display: block; margin: 8px auto; font-size: 18px; color: #4a2c2a; cursor: pointer; position: relative; padding-left: 30px; text-align: left; max-width: 250px; }
+    .radio-option input[type="radio"] { opacity: 0; position: absolute; left: 0; }
+    .custom-radio { position: absolute; left: 0; top: 3px; height: 18px; width: 18px; border: 2px solid #c9a23f; border-radius: 50%; transition: all 0.2s ease; }
+    .radio-option input[type="radio"]:checked + .custom-radio { background-color: #c9a23f; box-shadow: 0 0 0 2px #f5efe2 inset; }
+    .photos h2 { font-size: 40px; color: #4a2c2a; margin-bottom: 30px; }
+    .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; justify-items: center; align-items: center; max-width: 900px; margin: 0 auto; }
+    .photo-grid img { width: 100%; max-width: 400px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .entourage h3.phrase { color: #000000; font-size: 24px; margin-top: 30px; margin-bottom: 10px; font-family: 'Great Vibes', cursive; }
+    .entourage h3.principal-title { color: #c9a23f; font-size: 30px; font-family: 'Great Vibes', cursive; margin-top: 40px; }
+    .entourage h3.principal-phrase { color: #000000; font-size: 24px; font-family: 'Great Vibes', cursive; }
   </style>
 </head>
 <body>
 
-  <div class="band"></div>
- <div class="heading-container">
+<div class="band"></div>
+<div class="heading-container">
   <div class="names">
     <div class="medium">Jason</div>
     <div class="big">Son</div>
     <div class="medium">B. Abrea</div>
-
     <div class="ampersand">&</div>
-
     <div class="medium">Diana Mei</div>
     <div class="big">Dii</div>
     <div class="medium">L. Dangue</div>
   </div>
 </div>
 
-  <img src="DSC_0680.jpg" alt="Jason and Diana Mei" class="main-photo">
+<img src="DSC_0680.jpg" alt="Jason and Diana Mei" class="main-photo">
 
-  <div class="quote">
-    “So they are no longer two, but one flesh.<br>Therefore what God has joined together, let no one separate.”<br>
-    <strong>Matthew 19:6 (NKJV)</strong>
+<div class="quote">
+  “So they are no longer two, but one flesh.<br>Therefore what God has joined together, let no one separate.”<br>
+  <strong>Matthew 19:6 (NKJV)</strong>
+</div>
+
+<div class="band"></div>
+
+<div class="section entourage">
+  <h2>ENTOURAGE</h2>
+
+  <div class="two-columns">
+    <div class="column right">
+      <h3>Parents of the Bride</h3>
+      <p>Mardie A. Dangue</p>
+      <p>Nila L. Dangue</p>
+    </div>
+    <div class="column left">
+      <h3>Parents of the Groom</h3>
+      <p>Elegio P. Abrea</p>
+      <p>Marilyn B. Abrea</p>
+    </div>
   </div>
 
-  <div class="band"></div>
-
-  <div class="section details">
-    <h2>DETAILS</h2>
-    <p><strong>Date & Time:</strong><br>NOVEMBER 21, 2025<br>FRIDAY || 2:00 PM</p>
-    <p><strong>Venue:</strong></p>
-    <p><em>Ceremony:</em><br>Parish of Divine Mercy<br>Brgy. Sicsican, Puerto Princesa City</p>
-    <p><em>Reception:</em><br>Southwind Resort Palawan<br>Brgy. Tiniguiban, Puerto Princesa City</p>
-    <p><strong>Attire:</strong></p>
-    <p><em>Guests: </em><br>Casual or Semi-Formal attire in shades of beige.<br>
-    <em>Godfathers: </em><br>Barong Tagalog</p>
+  <h3 class="phrase">“To assist us in our needs”</h3>
+  <div class="two-columns">
+    <div class="column right">
+      <h3>Maid of Honor</h3>
+      <p>Quennie Joy R. Panisales</p>
+      <h3>Bridesmaids</h3>
+      <p>Aljie Fe Laad</p>
+      <p>Kayla Mariel B. Abrea</p>
+    </div>
+    <div class="column left">
+      <h3>Best Man</h3>
+      <p>Jerome B. Abrea</p>
+      <h3>Groomsmen</h3>
+      <p>Mark Laad</p>
+      <p>Devin Jude N. Cabanag</p>
+    </div>
   </div>
 
-  <div class="band"></div>
+  <h3 class="phrase">“To light our path”</h3>
+  <p>Candle Bearers:</p>
+  <p>Earl T. Parcia, Princess Danica L. Badenas</p>
 
-  <div class="section photos">
-  <div class="photo-grid">
-    <img src="DSC_0555.jpg" alt="Wedding photo 1">
-    <img src="DSC_0360.jpg" alt="Wedding photo 2">
-    <img src="DSC_0797.jpg" alt="Wedding photo 3">
-    <img src="DSC_0689.jpg" alt="Wedding photo 4">
+  <h3 class="phrase">“To bind us together”</h3>
+  <p>Cord Bearers:</p>
+  <p>Matt Alfred L. Magura, Althea D. Benitez</p>
+
+  <h3 class="phrase">“To cloth us together”</h3>
+  <p>Veil Bearers:</p>
+  <p>Karlos Francisco Buñi, Armie B. Gonzales</p>
+
+  <h3 class="phrase">“To carry our symbol of love, treasure, and faith.”</h3>    
+  <p>Ring Bearers: Jethro Cacal, Mark Alfred B. Badenas</p>
+  <p>Coin Bearers: John Kearl II B. Neri, John Wakeel B. Neri</p>
+  <p>Bible Bearer: John Alfred L. Magura</p>
+  <p>Flower Girls: Acel Gabriella L. Vasquez, Acel Jaliyah L. Vasquez, Kelsy Jayne G. Dela Torre, Blessed Angel L. Gonzales</p>
+
+  <h3 class="principal-title">Principal Sponsors</h3>
+  <h3 class="principal-phrase">“to stand as principal witness in our exchange of vows”</h3>
+
+  <div class="two-columns">
+    <div class="column right">
+      <p>Rev. Roderick Y. Caabay</p>
+      <p>Bro. Gerald Caballero</p>
+      <p>Bro. Luke L. Camacho</p>
+      <p>Dr. Romeo M. Cabungcal</p>
+      <p>Gil M. Saavedra</p>
+      <p>Eduardo T. Vallejo</p>
+      <p>Hon. Alonzo Gabinete</p>
+      <p>Hon. Bernie Valdez</p>
+      <p>Atty. Richalex G. Jagmis</p>
+      <p>Orphy C. Ordinario</p>
+      <p>Walfredo E. Aban</p>
+      <p>Noel B. Barra</p>
+      <p>Pedro B. Barra</p>
+      <p>Edwin B. Barra</p>
+      <p>Rodel Muñoz</p>
+      <p>Espinili V. Magura</p>
+      <p>Cecile G. Vasquez</p>
+      <p>Romeo A. Herrera</p>
+      <p>Archie Loresto</p>
+      <p>Edmundo Mahusay</p>
+      <p>Ernie Cacal</p>
+      <p>Sonny Namia</p>
+      <p>Andres L. Remo</p>
+    </div>
+
+    <div class="column left">
+      <p>Augustina S. Abian</p>
+      <p>Sis. Lerma Caballero</p>
+      <p>Dr. Madeliene Camacho</p>
+      <p>Felina Cabungcal</p>
+      <p>Hon. Helen L. Saavedra</p>
+      <p>Erlinda B. Vallejo</p>
+      <p>Gracel Dela Cruz</p>
+      <p>Emma Zabala</p>
+      <p>Sharon O. Jagmis</p>
+      <p>Shereen A. Ustares</p>
+      <p>Catherine Peilago</p>
+      <p>Meriam A. Barra</p>
+      <p>Jasmin J. Barra</p>
+      <p>Chona S. Barra</p>
+      <p>Dina Muñoz</p>
+      <p>Merla C. Ladica</p>
+      <p>Adelfa L. Vasquez</p>
+      <p>Marivie L. Herrera</p>
+      <p>Analiza L. Loresto</p>
+      <p>Carmencita L. Mahusay</p>
+      <p>Janet J. Nieves</p>
+      <p>Alma A. Chua</p>
+      <p>Esperanza M. Remo</p>
+    </div>
   </div>
 </div>
-  
-  <div class="band"></div>
 
-  <div class="section entourage">
-    <h2>ENTOURAGE</h2>
+<div class="band"></div>
 
-    <div class="two-columns">
-      <div class="column right">
-        <h3>Parents of the Bride</h3>
-        <p>Mardie A. Dangue</p>
-        <p>Nila L. Dangue</p>
-      </div>
-       <div class="column left">
-        <h3>Parents of the Groom</h3>
-        <p>Elegio P. Abrea</p>
-        <p>Marilyn B. Abrea</p>
-       </div>
-    </div>
-        <h3 class="phrase">“To assist us in our needs”</h3>
-    <div class="two-columns">
-      <div class="column right">
-        <h3>Maid of Honor</h3>
-        <p>Quennie Joy R. Panisales</p>
+<!-- REMINDERS -->
+<div class="section reminders">
+  <h2>REMINDERS</h2>
 
-        <h3>Bridesmaids</h3>
-        <p>Aljie Fe Laad</p>
-        <p>Kayla Mariel B. Abrea</p>
-      </div>
-      <div class="column left">
-        <h3>Best Man</h3>
-        <p>Jerome B. Abrea</p>
-        
-        <h3>Groomsmen</h3>
-        <p>Mark Laad</p>
-        <p>Devin Jude N. Cabanag</p>
-      </div>
-    </div>
-        <h3 class="phrase">“To light our path”</h3>
-        <h3>Candle</h3>
-        <p>Earl T. Parcia</p>
-        <p>Princess Danica L. Badenas</p>
+  <h3>Giftgiving</h3>
+  <p>With all that we have, we’ve been truly blessed.<br>
+  Your presence and prayers are all that we request.<br>
+  But if you desire to give nonetheless, monetary gift is one we humbly suggest.</p>
 
-        <h3 class="phrase">“To bind us together”</h3>
-        <h3>Cord</h3>
-        <p>Matt Alfred L. Magura</p>
-        <p>Althea D. Benitez</p>
+  <h3>Invitees</h3>
+  <p>We kindly request that only the guests indicated on your invitation attend. Thank you for understanding!</p>
+</div>
 
-        <h3 class="phrase">“To cloth us together”</h3>
-        <h3>Veil</h3>
-        <p>Karlos Francisco Buñi</p>
-        <p>Armie B. Gonzales</p>
+<div class="band"></div>
 
-         <h3 class="phrase">“To carry our symbol of love, treasure, and faith.”</h3>    
-        <h3>Ring Bearer</h3>
-        <p>Jethro Cacal</p>
-        <p>Mark Alfred B. Badenas</p>
-      
-        <h3>Coin Bearer</h3>
-        <p>John Kearl II B. Neri</p>
-        <p>John Wakeel B. Neri</p>
-
-        <h3>Bible Bearer</h3>
-        <p>John Alfred L. Magura</p>
-
-        <h3>Flower Girls</h3>
-        <p>Acel Gabriella L. Vasquez</p>
-        <p>Acel Jaliyah L. Vasquez</p>
-        <p>Kelsy Jayne G. Dela Torre</p>
-        <p>Blessed Angel L. Gonzales</p>
-    
-
-    <h3 class="principal-title">Principal Sponsors</h3>
-    <h3 class="principal-phrase">“to stand as principal witness in our exchange of vows”</p></h3>
-
-    <div class="two-columns">
-      <div class="column right">
-        <p>Rev. Roderick Y. Caabay</p>
-        <p>Bro. Gerald Caballero</p>
-        <p>Bro. Luke L. Camacho</p>
-        <p>Dr. Romeo M. Cabungcal</p>
-        <p>Gil M. Saavedra</p>
-        <p>Eduardo T. Vallejo</p>
-        <p>Hon. Alonzo Gabinete</p>
-        <p>Hon. Bernie Valdez</p>
-        <p>Atty. Richalex G. Jagmis</p>
-        <p>Orphy C. Ordinario</p>
-        <p>Walfredo E. Aban</p>
-        <p>Noel B. Barra</p>
-        <p>Pedro B. Barra</p>
-        <p>Edwin B. Barra</p>
-        <p>Rodel Muñoz</p>
-        <p>Espinili V. Magura</p>
-        <p>Cecile G. Vasquez</p>
-        <p>Romeo A. Herrera</p>
-        <p>Archie Loresto</p>
-        <p>Edmundo Mahusay</p>
-        <p>Ernie Cacal</p>
-        <p>Sonny Namia</p>
-        <p>Andres L. Remo</p>
-      </div>
-
-      <div class="column left">
-        <p>Augustina S. Abian</p>
-        <p>Sis. Lerma Caballero</p>
-        <p>Dr. Madeliene Camacho</p>
-        <p>Felina Cabungcal</p>
-        <p>Hon. Helen L. Saavedra</p>
-        <p>Erlinda B. Vallejo</p>
-        <p>Gracel Dela Cruz</p>
-        <p>Emma Zabala</p>
-        <p>Sharon O. Jagmis</p>
-        <p>Shereen A. Ustares</p>
-        <p>Catherine Peilago</p>
-        <p>Meriam A. Barra</p>
-        <p>Jasmin J. Barra</p>
-        <p>Chona S. Barra</p>
-        <p>Dina Muñoz</p>
-        <p>Merla C. Ladica</p>
-        <p>Adelfa L. Vasquez</p>
-        <p>Marivie L. Herrera</p>
-        <p>Analiza L. Loresto</p>
-        <p>Carmencita L. Mahusay</p>
-        <p>Janet J. Nieves</p>
-        <p>Alma A. Chua</p>
-        <p>Esperanza M. Remo</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="band"></div>
-<img src="DSC_0380.jpg" alt="Wedding photos" class="more-photo">
-<img src="DSC_0847.jpg" alt="Wedding photos" class="more-photo">
-  <div class="band"></div>
-
-  <!-- Reminders -->
-  <div class="section reminders">
-    <h2>REMINDERS</h2>
-
-    <h3>Giftgiving</h3>
-    <p>With all that we have, we’ve been truly blessed.<br>
-    Your presence and prayers are all that we request.<br>
-    But if you desire to give nonetheless,<br>
-    monetary gift is one we humbly suggest.</p>
-
-    <h3>Invitees</h3>
-    <p>We kindly request that only the number of guests indicated on your invitation attend, as seating has been specially reserved. Thank you for understanding!</p>
-  </div>
-
-  <div class="band"></div>
-
-  <!-- RSVP Form -->
-  <div class="section rsvp">
+<!-- RSVP Form -->
+<div class="section rsvp">
   <h2>RSVP</h2>
+  <p style="font-size: 18px; max-width: 500px; margin: 0 auto 20px;">
+    Kindly confirm your attendance through the RSVP form below.
+  </p>
+
   <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="rsvp-form">
     <input type="hidden" name="form-name" value="rsvp">
+
+    <!-- Honeypot -->
     <p style="display:none">
       <label>Don’t fill this out: <input name="bot-field"></label>
     </p>
@@ -506,18 +260,34 @@
       <p><strong>Will you attend?</strong></p>
       <label class="radio-option">
         <input type="radio" name="attendance" value="Yes, I’ll be there" required>
-        <span class="custom-radio"></span> Yes, I’ll be there!
+        <span class="custom-radio"></span> ✔ Yes, I’ll be there!
       </label>
       <label class="radio-option">
-        <input type="radio" name="attendance" value="No, I can’t attend" required>
-        <span class="custom-radio"></span> No, I can’t attend
+        <input type="radio" name="attendance" value="No, I’m sorry I can’t attend" required>
+        <span class="custom-radio"></span> ✖ I’m sorry, I won’t be able to attend
       </label>
     </div>
+
     <button type="submit">Send RSVP</button>
   </form>
+
+  <div id="thank-you" style="display:none; margin-top: 20px; font-size:18px; color:#4a2c2a;">
+    Thank you for your RSVP! We look forward to celebrating with you.
+  </div>
 </div>
 
-  <div class="band"></div>
+<div class="band"></div>
+
+<script>
+  // Show thank-you message after Netlify form submission
+  const form = document.getElementById('rsvp-form');
+  form.addEventListener('submit', function(e) {
+    setTimeout(() => {
+      form.style.display = 'none';
+      document.getElementById('thank-you').style.display = 'block';
+    }, 100);
+  });
+</script>
 
 </body>
 </html>
