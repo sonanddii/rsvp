@@ -296,6 +296,7 @@
         <p>Dr. Romeo M. Cabungcal</p>
         <p>Gil M. Saavedra</p>
         <p>Eduardo T. Vallejo</p>
+        <p>Hon. Alonzo Gabinete</p>
         <p>Hon. Bernie Valdez</p>
         <p>Atty. Richalex G. Jagmis</p>
         <p>Orphy C. Ordinario</p>
@@ -322,6 +323,7 @@
         <p>Felina Cabungcal</p>
         <p>Hon. Helen L. Saavedra</p>
         <p>Erlinda B. Vallejo</p>
+        <p>Gracel Dela Cruz</p>
         <p>Emma Zabala</p>
         <p>Sharon O. Jagmis</p>
         <p>Shereen A. Ustares</p>
@@ -366,28 +368,63 @@
 
   <!-- RSVP Form -->
   <div class="section rsvp">
-    <h2>RSVP</h2>
-    <form name="rsvp" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="rsvp">
-      <label for="name">Full Name</label>
-      <input type="text" name="name" id="name" required>
+  <h2>RSVP</h2>
+  <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="rsvp-form">
+    <input type="hidden" name="form-name" value="rsvp">
+    <p style="display:none">
+      <label>Don’t fill this out: <input name="bot-field"></label>
+    </p>
 
-      <label for="attendance">Will you attend?</label>
-      <select name="attendance" id="attendance" required>
-        <option value="">Select an option</option>
-        <option value="Yes, I’ll be there">Yes, I’ll be there!</option>
-        <option value="No, I can’t attend">No, I can’t attend</option>
-      </select>
+    <label for="name">Full Name</label>
+    <input type="text" name="name" id="name" required>
 
-      <label for="guests">Number of guests (including you)</label>
-      <input type="number" name="guests" id="guests" min="1" max="10">
+    <div class="attendance-options">
+      <p><strong>Will you attend?</strong></p>
+      <label class="radio-option">
+        <input type="radio" name="attendance" value="Yes, I’ll be there" required>
+        <span class="custom-radio"></span> Yes, I’ll be there!
+      </label>
+      <label class="radio-option">
+        <input type="radio" name="attendance" value="No, I can’t attend" required>
+        <span class="custom-radio"></span> No, I can’t attend
+      </label>
+    </div>
 
-      <label for="message">Message (optional)</label>
-      <textarea name="message" id="message" rows="3"></textarea>
+    <label for="guests">Number of guests (including you)</label>
+    <input type="number" name="guests" id="guests" min="1" max="10">
 
-      <button type="submit">Send RSVP</button>
-    </form>
+    <label for="message">Message (optional)</label>
+    <textarea name="message" id="message" rows="3"></textarea>
+
+    <button type="submit">Send RSVP</button>
+  </form>
+
+  <div id="thankyou-message" class="thankyou-message">
+    💌 Thank you for responding! We can’t wait to celebrate with you. 💍
   </div>
+</div>
+
+<script>
+  const form = document.getElementById("rsvp-form");
+  const thankyou = document.getElementById("thankyou-message");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      });
+      form.style.display = "none";
+      thankyou.style.display = "block";
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
 
   <div class="band"></div>
 
