@@ -16,34 +16,19 @@
   color: #4a2c2a;
   text-align: center;
 }
-    .corner-flowers {
+    .heading-container {
   position: relative;
-  width: 100%;
-  height: 150px; /* adjust based on your flower image size */
-  pointer-events: none; /* makes sure it doesn't block clicks */
+  z-index: 0; /* ensures heading is above background */
+  text-align: center;
+  margin-top: 0; /* no extra spacing added */
+  padding: 60px 0; /* optional vertical padding for spacing */
+  background-image: 
+    url('flower.png'),  /* left corner */
+    url('flower.png');  /* right corner */
+  background-position: top left, top right;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 150px auto, 150px auto; /* adjust size as needed */
 }
-
-.corner-flowers::before,
-.corner-flowers::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 120px; /* adjust based on image */
-  height: 120px; /* adjust based on image */
-  background-image: url('flower.png'); /* your flower image */
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.corner-flowers::before {
-  left: 0; /* top-left corner */
-}
-
-.corner-flowers::after {
-  right: 0; /* top-right corner */
-  transform: scaleX(-1); /* mirror the flower horizontally for symmetry */
-}
-
     .band {
       background-color: #4a2c2a;
       height: 25px;
@@ -292,19 +277,19 @@
 <body>
 
   <div class="band"></div>
-<!-- Top Corner Flowers -->
-<div class="corner-flowers"></div>
+ <div class="heading-container">
   <div class="names">
     <div class="medium">Jason</div>
-    <div class="big">Son</div>
+    <div class="big">SON</div>
     <div class="medium">B. Abrea</div>
 
     <div class="ampersand">&</div>
 
     <div class="medium">Diana Mei</div>
-    <div class="big">Dii</div>
+    <div class="big">DII</div>
     <div class="medium">L. Dangue</div>
   </div>
+</div>
 
   <img src="DSC_0680.jpg" alt="Jason and Diana Mei" class="main-photo">
 
