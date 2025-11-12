@@ -428,8 +428,7 @@
     monetary gift is one we humbly suggest.</p>
 
     <h3>Invitees</h3>
-    <p>We kindly request that only the guests listed on your invitation attend,<br>
-    as we have reserved seating.</p>
+    <p>We kindly request that only the number of guests indicated on your invitation attend, as seating has been specially reserved. Thank you for understanding!</p>
   </div>
 
   <div class="band"></div>
@@ -464,28 +463,6 @@
     💌 Thank you for responding! We can’t wait to celebrate with you. 💍
   </div>
 </div>
-
-<script>
-  const form = document.getElementById("rsvp-form");
-  const thankyou = document.getElementById("thankyou-message");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      });
-      form.style.display = "none";
-      thankyou.style.display = "block";
-    } catch (error) {
-      alert("Something went wrong. Please try again.");
-    }
-  });
-</script>
 
   <div class="band"></div>
 
